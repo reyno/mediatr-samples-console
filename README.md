@@ -1,4 +1,4 @@
-# .Net Core Sample for MediatR
+# .Net Core Console Sample for MediatR
 
 Uses the new generic host model in .Net Core 2.1.1
 
