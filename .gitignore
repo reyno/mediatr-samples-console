@@ -1,0 +1,4 @@
+/.vs
+/.vscode
+/src/MediatR.Sample.Console/bin
+/src/MediatR.Sample.Console/obj
