@@ -58,10 +58,12 @@ namespace MediatRSampleConsole {
             var requestValidatorTypes =
                 from assembly in AppDomain.CurrentDomain.GetAssemblies()
                 where !assembly.IsDynamic
-                from type in assembly.GetTypes()
-                where typeof(IRequestValidator).IsAssignableFrom(type)
-                   && type.IsClass
-                   && !type.IsAbstract
+                from type in assembly.DefinedTypes
+
+                where type.BaseType != null
+                   && type.BaseType.IsGenericType
+                   && type.BaseType.GetGenericTypeDefinition() == typeof(RequestValidator<>)
+
                 select type
                 ;
 
